@@ -1,0 +1,240 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: var(--body-bg);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background: var(--container-bg);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput, #dueDate, #priority {
+    flex: 1 1 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+#taskInput::placeholder {
+    color: var(--placeholder-color);
+}
+
+/* Add Task Button */
+#addTaskBtn {
+    flex: 1 1 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--add-task-btn-bg);
+    color: var(--add-task-btn-text);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#addTaskBtn:hover {
+    background: var(--add-task-btn-hover-bg);
+}
+
+/* Task List */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Task Item */
+.task-item {
+    background: var(--task-bg);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Inputs */
+#taskInput, #dueDate, #priority {
+    flex: 1 1 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.task-item.deleting {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.task-item .task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.task-item .task-content span {
+    font-size: 1rem;
+    word-break: break-word;
+    color: var(--text-color);
+}
+
+.task-item .task-content .due-date {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+}
+
+.task-item .task-content .priority {
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: var(--priority-bg);
+    width: fit-content;
+}
+
+.task-item .priority.low {
+    background: #4caf50;
+}
+
+.task-item .priority.medium {
+    background: #ff9800;
+}
+
+.task-item .priority.high {
+    background: #f44336;
+}
+
+.task-item .actions {
+    display: flex;
+    gap: 5px;
+}
+
+.task-item button {
+    background: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--button-text);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.task-item button:hover {
+    background: var(--button-hover-bg);
+}
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-section select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Scrollbar Styling */
+#taskList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#taskList::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
+}
+
+#taskList::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+#taskList::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Edit and Delete Buttons */
+.task-item .actions button:nth-child(1) {
+    background: var(--edit-btn-bg);
+    color: var(--edit-btn-text);
+}
+
+.task-item .actions button:nth-child(1):hover {
+    background: var(--edit-btn-hover-bg);
+}
+
+.task-item .actions button:nth-child(2) {
+    background: var(--delete-btn-bg);
+    color: var(--delete-btn-text);
+}
+
+.task-item .actions button:nth-child(2):hover {
+    background: var(--delete-btn-hover-bg);
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .input-section, .filter-section {
+        flex-direction: row;
+    }
+
+    #taskInput, #dueDate, #priority, #addTaskBtn, .filter-section select {
+        width: auto;
+        flex: 1;
+    }
+}
