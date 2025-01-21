@@ -20,15 +20,15 @@ function renderTasks() {
         if (task.completed) taskItem.classList.add('completed');
 
         taskItem.innerHTML = `
-      <div class="task-content">
+        <div class="task-content">
         <span>${task.text}</span>
         <div class="due-date">Due: ${task.dueDate}</div>
         <div class="priority ${task.priority}">${task.priority}</div>
-      </div>
-      <div class="actions">
+        </div>
+        <div class="actions">
         <button onclick="editTask(${index})">Edit</button>
         <button onclick="deleteTask(${index})">Delete</button>
-      </div>
+        </div>
     `;
 
         taskItem.querySelector('span').addEventListener('click', () => {
@@ -126,3 +126,6 @@ sortDueDate.addEventListener('change', renderTasks);
 
 // Initial Render
 renderTasks();
+
+
+

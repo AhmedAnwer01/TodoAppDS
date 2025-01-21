@@ -1,6 +1,6 @@
 /* Theme Variables */
 :root {
-    --body-bg: #f0f0f0;
+    --body-bg: hsl(0, 0%, 64%);
     --primary-color: #2575fc;
     --primary-hover: #1b5fd9;
     --text-color: #333;
@@ -48,10 +48,10 @@
     --primary-hover: #4d0a9e;
     --text-color: #fff;
     --secondary-text: #ddd;
-    --container-bg: rgba(0, 0, 0, 0.8);
-    --task-bg: rgba(0, 0, 0, 0.7);
+    --container-bg: rgba(0, 0, 0);
+    --task-bg: #141414;
     /* Slightly lighter than container */
-    --input-bg: rgba(0, 0, 0, 0.7);
+    --input-bg: #141414;
     /* Slightly lighter than container */
     --button-bg: rgba(255, 255, 255, 0.1);
     /* Semi-transparent white */
@@ -86,12 +86,13 @@
 
 /* Blue-Violet Theme */
 [data-theme="blue-violet"] {
-    --body-bg: #6a11cb;
+    --body-bg: rgb(106, 17, 203, 0.9);
     --primary-color: #2575fc;
     --primary-hover: #1b5fd9;
     --text-color: #fff;
+    --select-text-color: #000;
     --secondary-text: #ddd;
-    --container-bg: rgba(255, 255, 255, 0.1);
+    --container-bg: rgb(106, 17, 203);
     --task-bg: rgba(255, 255, 255, 0.05);
     /* Slightly darker than container */
     --input-bg: rgba(255, 255, 255, 0.05);
@@ -152,11 +153,11 @@
 }
 
 .theme-btn:nth-child(2) {
-    background: linear-gradient(to right, #333 50%, #6a11cb 50%);
+    background: linear-gradient(to right, #333 50%, #891cff 50%);
 }
 
 .theme-btn:nth-child(3) {
-    background: linear-gradient(to right, #6a11cb 50%, #2575fc 50%);
+    background: linear-gradient(to right, #891cff 50%, #2575fc 50%);
 }
 
 /* Animations */
